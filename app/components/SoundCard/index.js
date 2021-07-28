@@ -83,24 +83,24 @@ export const SoundCard = () => {
     <Container>
       <HeaderSection>
         <AppMenu />
-        <AppButton btnText={'TRY IT NOW'} btnClass={classes.appBtn} />
+        <AppButton btnText="TRY IT NOW" btnClass={classes.appBtn} />
       </HeaderSection>
       <BodySection>
         <SummaryCard>
           <AppHeader
-            headerText={'SUPERIOR SOUND'}
+            headerText="SUPERIOR SOUND"
             headerClass={classes.appHeader}
           />
           <AppSubtitle
-            subtitleText={'Experience live versions of your favourite songs.'}
+            subtitleText="Experience live versions of your favourite songs."
             subtitleClass={classes.appSubtitle}
           />
-          <AppButton btnText={'SEE DEMO'} btnClass={classes.appBtn} />
+          <AppButton btnText="SEE DEMO" btnClass={classes.appBtn} />
         </SummaryCard>
         <ImageCard>
           <FirstSpeaker />
           <SecondSpeaker />
-          <AppButton btnText={'CLICK'} btnClass={classes.playerBtn} />
+          <AppButton btnText="CLICK" btnClass={classes.playerBtn} />
         </ImageCard>
       </BodySection>
     </Container>

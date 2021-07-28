@@ -28,15 +28,13 @@ const Container = styled.div`
   max-width: 443px;
 `;
 
-export const PerkItem = ({ title, summary, color }) => {
-  return (
-    <Container>
-      <HorizontalBar color={color} />
-      <Title color={color}>{title}</Title>
-      <Summary>{summary}</Summary>
-    </Container>
-  );
-};
+export const PerkItem = ({ title, summary, color }) => (
+  <Container>
+    <HorizontalBar color={color} />
+    <Title color={color}>{title}</Title>
+    <Summary>{summary}</Summary>
+  </Container>
+);
 
 PerkItem.prototype = {
   title: PropTypes.string.isRequired,

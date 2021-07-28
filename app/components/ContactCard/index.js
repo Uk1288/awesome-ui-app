@@ -37,19 +37,17 @@ const Subtitle = styled.div`
   color: ${APP_WHITE};
 `;
 
-export const SoundCard = () => {
-  return (
-    <Container>
-      <EmailText>
-        <EmailIcon />
-        {' support@experienceconcerts.co'}
-      </EmailText>
-      <Subtitle>{'EXP|CON'}</Subtitle>
-      <FooterText>
-        {'2019 © All Rights Reserved | Speer Technologies Incorporated'}
-      </FooterText>
-    </Container>
-  );
-};
+export const SoundCard = () => (
+  <Container>
+    <EmailText>
+      <EmailIcon />
+      {' support@experienceconcerts.co'}
+    </EmailText>
+    <Subtitle>EXP|CON</Subtitle>
+    <FooterText>
+      {'2019 © All Rights Reserved | Speer Technologies Incorporated'}
+    </FooterText>
+  </Container>
+);
 
 export default SoundCard;

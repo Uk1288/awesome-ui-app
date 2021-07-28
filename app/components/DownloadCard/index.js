@@ -44,15 +44,15 @@ export const DownloadCard = () => {
       <BodySection>
         <SummaryCard>
           <AppHeader
-            headerText={'GET EXP|CON NOW'}
+            headerText="GET EXP|CON NOW"
             headerClass={classes.appHeader}
           />
           <AppSubtitle
-            subtitleText={'Purchase and download the app.'}
+            subtitleText="Purchase and download the app."
             subtitleClass={classes.appSubtitle}
           />
         </SummaryCard>
-        <AppButton btnText={'TRY IT NOW'} btnClass={classes.appBtn} />
+        <AppButton btnText="TRY IT NOW" btnClass={classes.appBtn} />
       </BodySection>
     </Container>
   );

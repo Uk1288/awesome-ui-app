@@ -26,20 +26,18 @@ const Summary = styled.div`
   letter-spacing: 3.5px;
 `;
 
-export const ReviewItem = ({ rating, title, summary }) => {
-  return (
-    <Container>
-      <RatingSection>
-        {Array(rating)
-          .fill(true)
-          .map((_, index) => (
-            <StarIcon key={index} />
-          ))}
-      </RatingSection>
-      <Title>{title}</Title>
-      <Summary>{summary}</Summary>
-    </Container>
-  );
-};
+export const ReviewItem = ({ rating, title, summary }) => (
+  <Container>
+    <RatingSection>
+      {Array(rating)
+        .fill(true)
+        .map((_, index) => (
+          <StarIcon key={index} />
+        ))}
+    </RatingSection>
+    <Title>{title}</Title>
+    <Summary>{summary}</Summary>
+  </Container>
+);
 
 export default ReviewItem;

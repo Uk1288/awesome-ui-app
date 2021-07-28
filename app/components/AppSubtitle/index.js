@@ -8,8 +8,8 @@ const Subtitle = styled.div`
   margin-top: 32px;
 `;
 
-export const AppSubtitle = ({ subtitleText, subtitleClass = '' }) => {
-  return <Subtitle className={subtitleClass}>{subtitleText}</Subtitle>;
-};
+export const AppSubtitle = ({ subtitleText, subtitleClass = '' }) => (
+  <Subtitle className={subtitleClass}>{subtitleText}</Subtitle>
+);
 
 export default AppSubtitle;

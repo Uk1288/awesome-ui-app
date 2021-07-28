@@ -101,27 +101,27 @@ export const SeatsCard = () => {
     <Container>
       <HeaderSection>
         <AppMenu />
-        <AppButton btnText={'TRY IT NOW'} btnClass={classes.appBtn} />
+        <AppButton btnText="TRY IT NOW" btnClass={classes.appBtn} />
       </HeaderSection>
       <BodySection>
         <ImageCard>
-          <AppButton btnText={'IMAGE'} btnClass={classes.smallImageBtn} />
-          <AppButton btnText={'IMAGE'} btnClass={classes.bigImageBtn} />
-          <AppButton btnText={''} btnClass={classes.revealBtn} />
-          <AppButton btnText={'REVEAL'} btnClass={classes.innerRevealBtn} />
+          <AppButton btnText="IMAGE" btnClass={classes.smallImageBtn} />
+          <AppButton btnText="IMAGE" btnClass={classes.bigImageBtn} />
+          <AppButton btnText="" btnClass={classes.revealBtn} />
+          <AppButton btnText="REVEAL" btnClass={classes.innerRevealBtn} />
         </ImageCard>
         <SummaryCard>
           <AppHeader
-            headerText={'FRONT ROW SEATS'}
+            headerText="FRONT ROW SEATS"
             headerClass={classes.appHeader}
           />
           <AppSubtitle
-            subtitleText={'Experience concerts up close and personal.'}
+            subtitleText="Experience concerts up close and personal."
             subtitleClass={classes.appSubtitle}
           />
-          <AppButton btnText={'SEE DEMO'} btnClass={classes.appBtn} />
+          <AppButton btnText="SEE DEMO" btnClass={classes.appBtn} />
           <AppButton
-            btnText={'IMAGE'}
+            btnText="IMAGE"
             btnClass={`${classes.bigImageBtn} ${classes.bottomImageBtn}`}
           />
         </SummaryCard>

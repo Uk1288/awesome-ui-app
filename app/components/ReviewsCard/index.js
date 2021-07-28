@@ -77,7 +77,7 @@ export const ReviewsCard = () => {
     <Container>
       <HeaderSection>
         <AppMenu />
-        <AppButton btnText={'TRY IT NOW'} btnClass={classes.appBtn} />
+        <AppButton btnText="TRY IT NOW" btnClass={classes.appBtn} />
       </HeaderSection>
       <BodySection>
         <ImageCard>
@@ -85,7 +85,7 @@ export const ReviewsCard = () => {
           <SecondReviewSpeaker />
         </ImageCard>
         <SummaryCard>
-          <AppHeader headerText={'REVIEWS'} headerClass={classes.appHeader} />
+          <AppHeader headerText="REVIEWS" headerClass={classes.appHeader} />
           <ReviewSection>
             {REVIEWS.map(review => (
               <ReviewItem

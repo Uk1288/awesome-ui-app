@@ -44,9 +44,9 @@ export const PerksCard = () => {
     <Container>
       <HeaderSection>
         <AppMenu />
-        <AppButton btnText={'TRY IT NOW'} btnClass={classes.appBtn} />
+        <AppButton btnText="TRY IT NOW" btnClass={classes.appBtn} />
       </HeaderSection>
-      <AppHeader headerText={'PERKS'} headerClass={classes.appHeader} />
+      <AppHeader headerText="PERKS" headerClass={classes.appHeader} />
       <PerksList>
         {PERKS.map((perk, index) => (
           <PerkItem

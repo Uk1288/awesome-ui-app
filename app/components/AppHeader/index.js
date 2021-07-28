@@ -8,8 +8,8 @@ const Header = styled.div`
   margin-top: 100px;
 `;
 
-export const AppHeader = ({ headerText, headerClass = '' }) => {
-  return <Header className={headerClass}>{headerText}</Header>;
-};
+export const AppHeader = ({ headerText, headerClass = '' }) => (
+  <Header className={headerClass}>{headerText}</Header>
+);
 
 export default AppHeader;

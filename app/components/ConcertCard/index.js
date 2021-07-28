@@ -49,19 +49,19 @@ export const ConcertCard = () => {
   return (
     <Container>
       <AppMenu />
-      <AppHeader headerText={'INTERACTIVE CONCERT EXPERIENCE'} />
+      <AppHeader headerText="INTERACTIVE CONCERT EXPERIENCE" />
       <AppSubtitle
-        subtitleText={`Experience your favourite artists like never before and from the comfort
-        of your own home.`}
+        subtitleText="Experience your favourite artists like never before and from the comfort
+        of your own home."
       />
-      <AppButton btnText={'TRY IT NOW'} />
+      <AppButton btnText="TRY IT NOW" />
       <SliderButton>
         {[
           FIRST_SLIDER_CARD_INDEX,
           SECOND_SLIDER_CARD_INDEX,
           THIRD_SLIDER_CARD_INDEX,
-        ].map(cardIndex => {
-          return isCardActive(cardIndex) ? (
+        ].map(cardIndex =>
+          isCardActive(cardIndex) ? (
             <CircleIcon className={classes.circleIcon} key={cardIndex} />
           ) : (
             <UncheckedIcon
@@ -69,8 +69,8 @@ export const ConcertCard = () => {
               key={cardIndex}
               onClick={() => setCardIndex(cardIndex)}
             />
-          );
-        })}
+          ),
+        )}
       </SliderButton>
     </Container>
   );

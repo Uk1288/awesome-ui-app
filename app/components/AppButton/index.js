@@ -16,8 +16,8 @@ const Button = styled.button`
   color: ${APP_WHITE};
 `;
 
-export const AppButton = ({ btnText, btnClass = '' }) => {
-  return <Button className={btnClass}>{btnText}</Button>;
-};
+export const AppButton = ({ btnText, btnClass = '' }) => (
+  <Button className={btnClass}>{btnText}</Button>
+);
 
 export default AppButton;
