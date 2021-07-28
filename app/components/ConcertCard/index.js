@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { makeStyles } from '@material-ui/core/styles';
-import CircleIcon from '@material-ui/icons/FiberManualRecord';
-import UncheckedIcon from '@material-ui/icons/RadioButtonUnchecked';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import { Carousel } from 'react-responsive-carousel';
 import ConcertImage from '../../images/ConcertImage.png';
+import ConcertImageTwo from '../../images/ConcertImageTwo.png';
 import AppMenu from '../AppMenu';
 import { APP_WHITE } from '../../utils/colors';
 import { EXTRA_LARGE_SCREEN } from '../../utils/appConstants';
@@ -29,7 +30,7 @@ const useStyles = makeStyles({
 
 const Container = styled.div`
   height: 700px;
-  background-image: url(${ConcertImage});
+  background-image: url(${props => props.imageToDisplay});
   background-size: cover;
   color: ${APP_WHITE};
   display: flex;
@@ -37,50 +38,36 @@ const Container = styled.div`
   align-items: center;
 `;
 
-const SliderButton = styled.div`
-  display: flex;
-  margin-top: 40px;
-`;
-
-const FIRST_SLIDER_CARD_INDEX = 0;
-const SECOND_SLIDER_CARD_INDEX = 1;
-const THIRD_SLIDER_CARD_INDEX = 2;
+const TEN_SECONDS = 10000;
 
 export const ConcertCard = () => {
   const classes = useStyles();
 
-  const [activeCardIndex, setCardIndex] = useState(FIRST_SLIDER_CARD_INDEX);
-
-  const isCardActive = cardIndex => cardIndex === activeCardIndex;
-
   return (
-    <Container>
-      <AppMenu />
-      <AppHeader headerText="INTERACTIVE CONCERT EXPERIENCE" />
-      <AppSubtitle
-        subtitleClass={classes.appSubtitle}
-        subtitleText="Experience your favourite artists like never before and from the comfort
-        of your own home."
-      />
-      <AppButton btnText="TRY IT NOW" />
-      <SliderButton>
-        {[
-          FIRST_SLIDER_CARD_INDEX,
-          SECOND_SLIDER_CARD_INDEX,
-          THIRD_SLIDER_CARD_INDEX,
-        ].map(cardIndex =>
-          isCardActive(cardIndex) ? (
-            <CircleIcon className={classes.circleIcon} key={cardIndex} />
-          ) : (
-            <UncheckedIcon
-              className={classes.uncheckedIcon}
-              key={cardIndex}
-              onClick={() => setCardIndex(cardIndex)}
-            />
-          ),
-        )}
-      </SliderButton>
-    </Container>
+    <Carousel
+      autoPlay
+      interval={TEN_SECONDS}
+      showThumbs={false}
+      infiniteLoop
+      showArrows={false}
+      showStatus={false}
+    >
+      {[ConcertImage, ConcertImageTwo].map((image, index) => (
+        <Container imageToDisplay={image} key={index}>
+          <AppMenu />
+          <AppHeader headerText="INTERACTIVE CONCERT EXPERIENCE" />
+          <AppSubtitle
+            subtitleClass={classes.appSubtitle}
+            subtitleText="Experience your favourite artists like never before and from the comfort
+      of your own home."
+          />
+          <AppButton
+            btnText="TRY IT NOW"
+            onClick={() => alert('you clicked! Pricing page coming soon')}
+          />
+        </Container>
+      ))}
+    </Carousel>
   );
 };
 

@@ -61,7 +61,11 @@ export const DownloadCard = () => {
             subtitleClass={classes.appSubtitle}
           />
         </SummaryCard>
-        <AppButton btnText="TRY IT NOW" btnClass={classes.appBtn} />
+        <AppButton
+          btnText="TRY IT NOW"
+          btnClass={classes.appBtn}
+          onClick={() => alert('you clicked! Pricing page coming soon')}
+        />
       </BodySection>
     </Container>
   );

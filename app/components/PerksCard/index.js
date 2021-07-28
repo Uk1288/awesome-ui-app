@@ -45,7 +45,11 @@ export const PerksCard = () => {
     <Container>
       <HeaderSection>
         <AppMenu />
-        <AppButton btnText="TRY IT NOW" btnClass={classes.appBtn} />
+        <AppButton
+          btnText="TRY IT NOW"
+          btnClass={classes.appBtn}
+          onClick={() => alert('you clicked! Pricing page coming soon')}
+        />
       </HeaderSection>
       <AppHeader headerText="PERKS" headerClass={classes.appHeader} />
       <PerksList>

@@ -15,6 +15,9 @@ const Button = styled.button`
   border-radius: 79px;
   border: none;
   color: ${APP_WHITE};
+  :hover {
+    cursor: pointer;
+  }
   @media only screen and ${EXTRA_LARGE_SCREEN} {
     height: 60px;
     border-radius: 60px;
@@ -22,8 +25,10 @@ const Button = styled.button`
   }
 `;
 
-export const AppButton = ({ btnText, btnClass = '' }) => (
-  <Button className={btnClass}>{btnText}</Button>
+export const AppButton = ({ btnText, btnClass = '', onClick }) => (
+  <Button className={btnClass} onClick={onClick}>
+    {btnText}
+  </Button>
 );
 
 export default AppButton;

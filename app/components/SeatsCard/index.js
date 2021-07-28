@@ -133,7 +133,11 @@ export const SeatsCard = () => {
     <Container>
       <HeaderSection>
         <AppMenu />
-        <AppButton btnText="TRY IT NOW" btnClass={classes.appBtn} />
+        <AppButton
+          btnText="TRY IT NOW"
+          btnClass={classes.appBtn}
+          onClick={() => alert('you clicked! Pricing page coming soon')}
+        />
       </HeaderSection>
       <BodySection>
         <ImageCard>
@@ -151,7 +155,11 @@ export const SeatsCard = () => {
             subtitleText="Experience concerts up close and personal."
             subtitleClass={classes.appSubtitle}
           />
-          <AppButton btnText="SEE DEMO" btnClass={classes.appBtn} />
+          <AppButton
+            btnText="SEE DEMO"
+            btnClass={classes.appBtn}
+            onClick={() => alert('you clicked! See demo page coming soon')}
+          />
           <AppButton
             btnText="IMAGE"
             btnClass={`${classes.bigImageBtn} ${classes.bottomImageBtn}`}

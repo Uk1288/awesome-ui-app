@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import styled from 'styled-components';
 import { makeStyles } from '@material-ui/core/styles';
 import AppMenu from '../AppMenu';
@@ -8,6 +8,7 @@ import AppSubtitle from '../AppSubtitle';
 import { APP_ORANGE, APP_WHITE } from '../../utils/colors';
 import SpeakerAbove from '../../images/SpeakerAbove.png';
 import SpeakerBelow from '../../images/SpeakerBelow.png';
+import AudioSound from '../../audioFiles/SoundScienceFiction.mp3';
 import { EXTRA_LARGE_SCREEN, LARGE_SCREEN } from '../../utils/appConstants';
 
 const useStyles = makeStyles({
@@ -99,12 +100,47 @@ const SecondSpeaker = styled.div`
 
 export const SoundCard = () => {
   const classes = useStyles();
+  const [isAudioPlaying, setAudioPlaying] = useState(false);
+  const playerElement = useRef(null);
+  const audioContext = new AudioContext();
+
+  useEffect(() => {
+    let audioTrack;
+    if (playerElement && playerElement.current) {
+      audioTrack = audioContext.createMediaElementSource(playerElement.current);
+      audioTrack.connect(audioContext.destination);
+    }
+    // cleanup audio connection
+    return () => {
+      audioTrack && audioTrack.disconnect();
+    };
+  }, [playerElement]);
+
+  const handleAudioBtnClick = async () => {
+    const shouldAudioPlay = !isAudioPlaying;
+    if (shouldAudioPlay) {
+      if (audioContext.state === 'suspended') {
+        await audioContext.resume();
+      }
+      playerElement.current.play();
+    } else {
+      playerElement.current.pause();
+      if (audioContext.state === 'running') {
+        await audioContext.suspend();
+      }
+    }
+    setAudioPlaying(() => shouldAudioPlay);
+  };
 
   return (
     <Container>
       <HeaderSection>
         <AppMenu />
-        <AppButton btnText="TRY IT NOW" btnClass={classes.appBtn} />
+        <AppButton
+          btnText="TRY IT NOW"
+          btnClass={classes.appBtn}
+          onClick={() => alert('you clicked! Pricing page coming soon')}
+        />
       </HeaderSection>
       <BodySection>
         <SummaryCard>
@@ -116,12 +152,25 @@ export const SoundCard = () => {
             subtitleText="Experience live versions of your favourite songs."
             subtitleClass={classes.appSubtitle}
           />
-          <AppButton btnText="SEE DEMO" btnClass={classes.appBtn} />
+          <AppButton
+            btnText="SEE DEMO"
+            btnClass={classes.appBtn}
+            onClick={() => alert('you clicked! Pricing page coming soon')}
+          />
         </SummaryCard>
         <ImageCard>
           <FirstSpeaker />
           <SecondSpeaker />
-          <AppButton btnText="CLICK" btnClass={classes.playerBtn} />
+          <audio
+            src={AudioSound}
+            ref={playerElement}
+            onEnded={() => setAudioPlaying(false)}
+          />
+          <AppButton
+            btnText="CLICK"
+            btnClass={classes.playerBtn}
+            onClick={handleAudioBtnClick}
+          />
         </ImageCard>
       </BodySection>
     </Container>
