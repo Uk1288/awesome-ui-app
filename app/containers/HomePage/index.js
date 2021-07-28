@@ -7,10 +7,6 @@ import ReviewsCard from '../../components/ReviewsCard';
 import DownloadCard from '../../components/DownloadCard';
 import ContactCard from '../../components/ContactCard';
 
-// actual => scaled
-// 1080px => 700px
-// 814px => 527px
-// 538px => 378px
 export default function HomePage() {
   return (
     <>

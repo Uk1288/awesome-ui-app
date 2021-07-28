@@ -1,4 +1,13 @@
 import { APP_RED, APP_TEAL, APP_YELLOW } from './colors';
+// app breakpoints
+export const EXTRA_EXTRA_LARGE_SCREEN = '(min-width: 1500px)';
+// export const EXTRA_LARGE_SCREEN = '(min-width: 1200px)';
+export const EXTRA_LARGE_SCREEN = '(max-width: 1500px)';
+// export const LARGE_SCREEN = '(min-width: 992px)';
+export const LARGE_SCREEN = '(max-width: 1200px)';
+export const MEDIUM_SCREEN = '(min-width: 768px)';
+export const SMALL_SCREEN = '(min-width: 600px)';
+export const EXTRA_SMALL_SCREEN = '(max-width: 600px)';
 
 export const PERKS = [
   {

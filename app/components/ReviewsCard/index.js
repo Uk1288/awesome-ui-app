@@ -7,7 +7,7 @@ import AppHeader from '../AppHeader';
 import { APP_WHITE, APP_TEAL } from '../../utils/colors';
 import FirstReviewSpeakerImg from '../../images/FirstReviewSpeaker.png';
 import SecondReviewSpeakerImg from '../../images/SecondReviewSpeaker.png';
-import { REVIEWS } from '../../utils/appConstants';
+import { REVIEWS, EXTRA_LARGE_SCREEN } from '../../utils/appConstants';
 import ReviewItem from './ReviewItem';
 
 const useStyles = makeStyles({
@@ -34,7 +34,7 @@ const HeaderSection = styled.div`
 
 const BodySection = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   margin: 0px 50px;
 `;
 
@@ -49,7 +49,7 @@ const ImageCard = styled.div`
   position: relative;
   display: flex;
   height: 400px;
-  width: 400px;
+  width: 270px;
 `;
 
 const FirstReviewSpeaker = styled.div`
@@ -58,6 +58,10 @@ const FirstReviewSpeaker = styled.div`
   width: 400px;
   background-size: contain;
   position: absolute;
+  @media only screen and ${EXTRA_LARGE_SCREEN} {
+    transform: scale(0.8);
+    left: -80px;
+  }
 `;
 
 const SecondReviewSpeaker = styled.div`
@@ -68,6 +72,11 @@ const SecondReviewSpeaker = styled.div`
   margin-top: 190px;
   position: absolute;
   left: 40px;
+  @media only screen and ${EXTRA_LARGE_SCREEN} {
+    transform: scale(0.8);
+    top: -50px;
+    left: -40px;
+  }
 `;
 
 export const ReviewsCard = () => {

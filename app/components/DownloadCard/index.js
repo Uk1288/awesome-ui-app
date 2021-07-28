@@ -6,10 +6,15 @@ import AppButton from '../AppButton';
 import AppHeader from '../AppHeader';
 import AppSubtitle from '../AppSubtitle';
 import { APP_ORANGE, APP_WHITE, APP_BLACK } from '../../utils/colors';
+import { EXTRA_LARGE_SCREEN } from '../../utils/appConstants';
 
 const useStyles = makeStyles({
   appBtn: {
     marginRight: '76px',
+    [`@media only screen and ${EXTRA_LARGE_SCREEN}`]: {
+      marginTop: '90px',
+      marginRight: '0px',
+    },
   },
   appSubtitle: {
     textAlign: 'left',
@@ -31,6 +36,10 @@ const BodySection = styled.div`
   justify-content: space-around;
   align-items: center;
   margin: 0px 146px;
+  @media only screen and ${EXTRA_LARGE_SCREEN} {
+    margin-top: 80px;
+    justify-content: space-between;
+  }
 `;
 
 const SummaryCard = styled.div``;

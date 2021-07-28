@@ -6,6 +6,7 @@ import UncheckedIcon from '@material-ui/icons/RadioButtonUnchecked';
 import ConcertImage from '../../images/ConcertImage.png';
 import AppMenu from '../AppMenu';
 import { APP_WHITE } from '../../utils/colors';
+import { EXTRA_LARGE_SCREEN } from '../../utils/appConstants';
 import AppButton from '../AppButton';
 import AppHeader from '../AppHeader';
 import AppSubtitle from '../AppSubtitle';
@@ -17,6 +18,12 @@ const useStyles = makeStyles({
   },
   circleIcon: {
     fontSize: '21px',
+  },
+  appSubtitle: {
+    [`@media only screen and ${EXTRA_LARGE_SCREEN}`]: {
+      marginLeft: '230px',
+      marginRight: '230px',
+    },
   },
 });
 
@@ -51,6 +58,7 @@ export const ConcertCard = () => {
       <AppMenu />
       <AppHeader headerText="INTERACTIVE CONCERT EXPERIENCE" />
       <AppSubtitle
+        subtitleClass={classes.appSubtitle}
         subtitleText="Experience your favourite artists like never before and from the comfort
         of your own home."
       />

@@ -8,6 +8,7 @@ import AppSubtitle from '../AppSubtitle';
 import { APP_ORANGE, APP_WHITE } from '../../utils/colors';
 import SpeakerAbove from '../../images/SpeakerAbove.png';
 import SpeakerBelow from '../../images/SpeakerBelow.png';
+import { EXTRA_LARGE_SCREEN, LARGE_SCREEN } from '../../utils/appConstants';
 
 const useStyles = makeStyles({
   appBtn: {
@@ -31,13 +32,20 @@ const useStyles = makeStyles({
     border: `3px solid ${APP_WHITE}`,
     bottom: '15px',
     left: '165px',
+    [`@media only screen and ${EXTRA_LARGE_SCREEN}`]: {
+      width: '100px',
+      height: '100px',
+      bottom: '50px',
+      left: '233px',
+      border: `2px solid ${APP_WHITE}`,
+    },
+    [`@media only screen and ${LARGE_SCREEN}`]: {
+      bottom: '100px',
+      left: '163px',
+    },
   },
 });
 
-// actual => scaled
-// 1080px => 700px
-// 814px => 527px
-// 538px => 378px
 const Container = styled.div`
   height: 700px;
   background-color: ${APP_ORANGE};
@@ -66,6 +74,12 @@ const FirstSpeaker = styled.div`
   height: 397px;
   width: 254px;
   background-size: contain;
+  @media only screen and ${EXTRA_LARGE_SCREEN} {
+    transform: scale(0.8);
+  }
+  @media only screen and ${LARGE_SCREEN} {
+    width: 200px;
+  }
 `;
 
 const SecondSpeaker = styled.div`
@@ -74,6 +88,13 @@ const SecondSpeaker = styled.div`
   width: 254px;
   background-size: contain;
   margin-top: 190px;
+  @media only screen and ${EXTRA_LARGE_SCREEN} {
+    transform: scale(0.8);
+  }
+  @media only screen and ${LARGE_SCREEN} {
+    width: 200px;
+    margin-top: 100px;
+  }
 `;
 
 export const SoundCard = () => {

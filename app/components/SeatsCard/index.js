@@ -6,6 +6,7 @@ import AppButton from '../AppButton';
 import AppHeader from '../AppHeader';
 import AppSubtitle from '../AppSubtitle';
 import { APP_YELLOW, APP_WHITE, APP_BLACK } from '../../utils/colors';
+import { EXTRA_LARGE_SCREEN, LARGE_SCREEN } from '../../utils/appConstants';
 
 const useStyles = makeStyles({
   appBtn: {
@@ -15,6 +16,9 @@ const useStyles = makeStyles({
   },
   appSubtitle: {
     textAlign: 'left',
+    [`@media only screen and ${EXTRA_LARGE_SCREEN}`]: {
+      width: '430px',
+    },
   },
   appHeader: {
     textAlign: 'left',
@@ -31,6 +35,10 @@ const useStyles = makeStyles({
     left: '230px',
     font: 'normal normal bold 32px/50px Helvetica Neue',
     letterSpacing: '5.8px',
+    [`@media only screen and ${EXTRA_LARGE_SCREEN}`]: {
+      width: '200px',
+      height: '200px',
+    },
   },
   bigImageBtn: {
     width: '340px',
@@ -43,6 +51,10 @@ const useStyles = makeStyles({
     left: '85px',
     font: 'normal normal bold 55px/72px Helvetica Neue',
     letterSpacing: '9.1px',
+    [`@media only screen and ${EXTRA_LARGE_SCREEN}`]: {
+      width: '300px',
+      height: '300px',
+    },
   },
   revealBtn: {
     width: '145px',
@@ -51,6 +63,10 @@ const useStyles = makeStyles({
     background: APP_BLACK,
     top: '170px',
     left: '325px',
+    [`@media only screen and ${EXTRA_LARGE_SCREEN}`]: {
+      width: '125px',
+      height: '125px',
+    },
   },
   innerRevealBtn: {
     width: '125px',
@@ -61,12 +77,24 @@ const useStyles = makeStyles({
     border: `3px solid ${APP_WHITE}`,
     top: '180px',
     left: '335px',
+    [`@media only screen and ${EXTRA_LARGE_SCREEN}`]: {
+      width: '105px',
+      height: '105px',
+      font: 'normal normal bold 18px/24px Helvetica Neue',
+    },
   },
   bottomImageBtn: {
     top: '300px',
-    left: '500px',
+    left: '620px',
     font: 'normal normal bold 32px/50px Helvetica Neue',
     letterSpacing: '5.8px',
+    [`@media only screen and ${EXTRA_LARGE_SCREEN}`]: {
+      top: '340px',
+      left: '290px',
+    },
+    [`@media only screen and ${LARGE_SCREEN}`]: {
+      left: '200px',
+    },
   },
 });
 
@@ -83,7 +111,7 @@ const HeaderSection = styled.div`
 
 const BodySection = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 `;
 
 const SummaryCard = styled.div`
@@ -92,6 +120,10 @@ const SummaryCard = styled.div`
 
 const ImageCard = styled.div`
   position: relative;
+  width: 400px;
+  @media only screen and ${EXTRA_LARGE_SCREEN} {
+    width: 500px;
+  }
 `;
 
 export const SeatsCard = () => {

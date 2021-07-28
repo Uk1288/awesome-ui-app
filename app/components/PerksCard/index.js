@@ -34,6 +34,7 @@ const PerksList = styled.div`
   display: flex;
   flex-wrap: wrap;
   margin-left: 150px;
+  margin-right: 150px;
   justify-content: space-between;
 `;
 

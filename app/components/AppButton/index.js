@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { APP_WHITE } from '../../utils/colors';
+import { EXTRA_LARGE_SCREEN } from '../../utils/appConstants';
 
 const Button = styled.button`
   width: 284px;
@@ -14,6 +15,11 @@ const Button = styled.button`
   border-radius: 79px;
   border: none;
   color: ${APP_WHITE};
+  @media only screen and ${EXTRA_LARGE_SCREEN} {
+    height: 60px;
+    border-radius: 60px;
+    font: normal normal bold 21px/28px Helvetica Neue;
+  }
 `;
 
 export const AppButton = ({ btnText, btnClass = '' }) => (
