@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import { EXTRA_LARGE_SCREEN } from '../../utils/appConstants';
 
 const Header = styled.div`
@@ -15,5 +16,10 @@ const Header = styled.div`
 export const AppHeader = ({ headerText, headerClass = '' }) => (
   <Header className={headerClass}>{headerText}</Header>
 );
+
+AppHeader.propType = {
+  headerText: PropTypes.string.isRequired,
+  headerClass: PropTypes.string,
+};
 
 export default AppHeader;

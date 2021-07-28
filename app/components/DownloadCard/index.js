@@ -42,8 +42,6 @@ const BodySection = styled.div`
   }
 `;
 
-const SummaryCard = styled.div``;
-
 export const DownloadCard = () => {
   const classes = useStyles();
 
@@ -51,7 +49,7 @@ export const DownloadCard = () => {
     <Container>
       <AppMenu />
       <BodySection>
-        <SummaryCard>
+        <div>
           <AppHeader
             headerText="GET EXP|CON NOW"
             headerClass={classes.appHeader}
@@ -60,7 +58,7 @@ export const DownloadCard = () => {
             subtitleText="Purchase and download the app."
             subtitleClass={classes.appSubtitle}
           />
-        </SummaryCard>
+        </div>
         <AppButton
           btnText="TRY IT NOW"
           btnClass={classes.appBtn}

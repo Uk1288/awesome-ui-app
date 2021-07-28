@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import { EXTRA_LARGE_SCREEN } from '../../utils/appConstants';
 
 const Subtitle = styled.div`
@@ -16,5 +17,10 @@ const Subtitle = styled.div`
 export const AppSubtitle = ({ subtitleText, subtitleClass = '' }) => (
   <Subtitle className={subtitleClass}>{subtitleText}</Subtitle>
 );
+
+AppSubtitle.propType = {
+  subtitleText: PropTypes.string.isRequired,
+  subtitleClass: PropTypes.string,
+};
 
 export default AppSubtitle;

@@ -38,8 +38,6 @@ const BodySection = styled.div`
   margin: 0px 50px;
 `;
 
-const SummaryCard = styled.div``;
-
 const ReviewSection = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -97,7 +95,7 @@ export const ReviewsCard = () => {
           <FirstReviewSpeaker />
           <SecondReviewSpeaker />
         </ImageCard>
-        <SummaryCard>
+        <div>
           <AppHeader headerText="REVIEWS" headerClass={classes.appHeader} />
           <ReviewSection>
             {REVIEWS.map(review => (
@@ -109,7 +107,7 @@ export const ReviewsCard = () => {
               />
             ))}
           </ReviewSection>
-        </SummaryCard>
+        </div>
       </BodySection>
     </Container>
   );

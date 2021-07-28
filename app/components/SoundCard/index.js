@@ -63,8 +63,6 @@ const BodySection = styled.div`
   margin: 0px 146px;
 `;
 
-const SummaryCard = styled.div``;
-
 const ImageCard = styled.div`
   position: relative;
   display: flex;
@@ -143,7 +141,7 @@ export const SoundCard = () => {
         />
       </HeaderSection>
       <BodySection>
-        <SummaryCard>
+        <div>
           <AppHeader
             headerText="SUPERIOR SOUND"
             headerClass={classes.appHeader}
@@ -157,7 +155,7 @@ export const SoundCard = () => {
             btnClass={classes.appBtn}
             onClick={() => alert('you clicked! Pricing page coming soon')}
           />
-        </SummaryCard>
+        </div>
         <ImageCard>
           <FirstSpeaker />
           <SecondSpeaker />

@@ -49,7 +49,7 @@ export const PerkItem = ({ title, summary, color }) => (
   </Container>
 );
 
-PerkItem.prototype = {
+PerkItem.propType = {
   title: PropTypes.string.isRequired,
   summary: PropTypes.string.isRequired,
   color: PropTypes.string.isRequired,

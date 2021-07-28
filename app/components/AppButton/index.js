@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import { APP_WHITE } from '../../utils/colors';
 import { EXTRA_LARGE_SCREEN } from '../../utils/appConstants';
 
@@ -30,5 +31,11 @@ export const AppButton = ({ btnText, btnClass = '', onClick }) => (
     {btnText}
   </Button>
 );
+
+AppButton.propType = {
+  btnText: PropTypes.string,
+  btnClass: PropTypes.string,
+  onClick: PropTypes.func,
+};
 
 export default AppButton;
