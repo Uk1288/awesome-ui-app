@@ -1,18 +1,26 @@
-/*
- * HomePage
- *
- * This is the first thing users see of our App, at the '/' route
- *
- */
-
 import React from 'react';
-import { FormattedMessage } from 'react-intl';
-import messages from './messages';
+import SoundCard from '../../components/SoundCard';
+import ConcertCard from '../../components/ConcertCard';
+import SeatsCard from '../../components/SeatsCard';
+import PerksCard from '../../components/PerksCard';
+import ReviewsCard from '../../components/ReviewsCard';
+import DownloadCard from '../../components/DownloadCard';
+import ContactCard from '../../components/ContactCard';
 
+// actual => scaled
+// 1080px => 700px
+// 814px => 527px
+// 538px => 378px
 export default function HomePage() {
   return (
-    <h1>
-      <FormattedMessage {...messages.header} />
-    </h1>
+    <>
+      <ConcertCard />
+      <SoundCard />
+      <SeatsCard />
+      <PerksCard />
+      <ReviewsCard />
+      <DownloadCard />
+      <ContactCard />
+    </>
   );
 }
